@@ -7,14 +7,23 @@ package hd2;
 
 import java.util.ArrayList;
 
-public class StackFunction<E> implements Stack<E>{
-   protected ArrayList<E> data;
+public class StackArrayList<E> implements Stack<E>{
+
+    /**
+     *
+     */
+    protected ArrayList<E> data;
    
-   public StackFunction(){
+   public StackArrayList(){
        // post: constructs a new, empty stack
-	data = new ArrayList<E>();
+	data = new ArrayList<>();
    }
    
+    /**
+     *
+     * @param item
+     */
+    @Override
    public void push(E item){
    // post: the value is added to the stack
    // will be popped next if no intervening pushpush
@@ -22,12 +31,14 @@ public class StackFunction<E> implements Stack<E>{
    }
    
    
+   @Override
    public E pop(){
        // pre: stack is not empty
        // post: most recently pushed item is removed and returned
        return data.remove(size()-1);
    }
    
+   @Override
    public E peek(){
        // pre: stack is not empty
        // post: top value (next to be popped) is returned
@@ -35,12 +46,14 @@ public class StackFunction<E> implements Stack<E>{
    }
 
    
+   @Override
    public boolean empty(){
        // post: returns true if and only if the stack is empty
        return size() == 0;
    }
    
    
+   @Override
    public int size(){
        // post: returns the number of elements in the stack
        return data.size();
