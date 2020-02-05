@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hd2;
+
 
 import java.util.*;
 import java.io.*;
@@ -12,18 +12,18 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-                Stack<String> miStack = new StackArrayList<String>();
-                Calcu calculadora = new Calcu();
-                // variables
-                String info = "\n";
-                ArrayList numeros = new ArrayList();
-                int operando1;
-                int operando2 ;
-                int total = 0;
-                boolean bandera = true;
+    public static void main(String[] args) throws Exception{
+    iCalculadora calculadora = new Calculadora();
+    iStack<String> miStack = new Stack<String>(); 
+    // variables
+    String info = "\n";
+    ArrayList numeros = new ArrayList();
+    int operando1;
+    int operando2 ;
+    int total = 0;
+    boolean bandera = true;
 		// se obtiene el documento con la operacion y se almacena en una variable de tipo String
-    File f = new File( "C:\\Users\\Diego Alvarez\\Desktop\\U\\Algoritmos\\HD2\\archivo.txt" );
+    File f = new File("datos.txt");
     BufferedReader entrada;
     try {
            entrada = new BufferedReader(new FileReader(f));
@@ -85,7 +85,7 @@ public class Main {
                 // se agrega el resultado de la operacion al stack
                 miStack.push(String.valueOf(total));
             }else{
-                System.out.println("Valio verga");
+                System.out.println("ERROR");
             }
         }
           
