@@ -1,3 +1,5 @@
+package Calculadora;
+
 import static org.junit.Assert.*;
 
 import org.junit.Test;
@@ -5,6 +7,8 @@ import org.junit.Test;
 public class CalculadoraTest {
 
 	Calculadora calc = new Calculadora();
+	Stack<String> stack = new Stack<String>();
+	
 	
 	@Test
 	public void testSumar() {
@@ -32,6 +36,23 @@ public class CalculadoraTest {
 		int val1 = calc.dividir(45, 5);
 		int val2 = 9;
 		assertEquals(val1, val2);
+	}
+	
+	@Test
+	public void testPop() {
+		stack.push("Java");
+		String val1 = stack.pop();
+		String val2 = "Java";
+		assertEquals(val1,val2);	
+	}
+	
+	@Test
+	public void testSize() {
+		stack.push("Java");
+		stack.push("Test");
+		int val1 = stack.size();
+		int val2 = 2;
+		assertEquals(val1,val2);
 	}
 
 }
